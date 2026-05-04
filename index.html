@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sparkle Shop - Bracelets & Bedazzling Kits!</title>
+<style>
+  body {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 25%, #a1c4fd 50%, #c2e9fb 75%, #fbc2eb 100%);
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: #4a154b;
+  }
+
+  header {
+    text-align: center;
+    padding: 30px 20px 10px;
+  }
+
+  h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #ff1493;
+    text-shadow: 3px 3px 0 #fff, 6px 6px 0 #ffd700;
+    letter-spacing: 2px;
+  }
+
+  .tagline {
+    font-size: 1.3em;
+    color: #6a0dad;
+    margin-top: 10px;
+  }
+
+  .about {
+    background: rgba(255,255,255,0.85);
+    border: 4px dashed #ff69b4;
+    border-radius: 20px;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.1em;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2.2em;
+    color: #ff4500;
+    text-shadow: 2px 2px 0 #fff;
+    margin-top: 40px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    border: 4px solid;
+    transition: transform 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+
+  .card.pink   { border-color: #ff69b4; }
+  .card.blue   { border-color: #1e90ff; }
+  .card.purple { border-color: #9370db; }
+  .card.gold   { border-color: #ffd700; }
+  .card.green  { border-color: #32cd32; }
+  .card.orange { border-color: #ff8c00; }
+
+  .picture {
+    height: 140px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    margin-bottom: 10px;
+    letter-spacing: 6px;
+  }
+
+  .name {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #4a154b;
+    margin: 6px 0;
+  }
+
+  .desc {
+    font-size: 0.95em;
+    color: #555;
+    min-height: 40px;
+  }
+
+  .price {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #ff1493;
+    margin-top: 8px;
+  }
+
+  /* Bracelet picture backgrounds */
+  .bg1 { background: linear-gradient(90deg,#ff9a9e,#fad0c4); }
+  .bg2 { background: linear-gradient(90deg,#a1c4fd,#c2e9fb); }
+  .bg3 { background: linear-gradient(90deg,#fbc2eb,#a6c1ee); }
+  .bg4 { background: linear-gradient(90deg,#ffecd2,#fcb69f); }
+  .bg5 { background: linear-gradient(90deg,#84fab0,#8fd3f4); }
+  .bg6 { background: linear-gradient(90deg,#fccb90,#d57eeb); }
+  .bg7 { background: linear-gradient(90deg,#ff6a88,#ff99ac); }
+  .bg8 { background: linear-gradient(90deg,#7028e4,#e5b2ca); }
+  .bg9 { background: linear-gradient(90deg,#f6d365,#fda085); }
+  .bg10{ background: linear-gradient(90deg,#5ee7df,#b490ca); }
+  .bg11{ background: linear-gradient(90deg,#fa709a,#fee140); }
+  .bg12{ background: linear-gradient(90deg,#30cfd0,#330867); color:#fff; }
+
+  .customize {
+    background: rgba(255,255,255,0.92);
+    border: 4px solid #ffd700;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    text-align: center;
+  }
+
+  .customize h2 {
+    margin-top: 0;
+  }
+
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .option {
+    background: #fff0f5;
+    border: 2px dashed #ff69b4;
+    border-radius: 14px;
+    padding: 12px 18px;
+    font-size: 1.05em;
+  }
+
+  .option strong {
+    color: #ff1493;
+  }
+
+  .how {
+    background: rgba(255,255,255,0.9);
+    border-radius: 20px;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 25px;
+    text-align: center;
+    border: 4px solid #1e90ff;
+  }
+
+  .how ol {
+    text-align: left;
+    display: inline-block;
+    font-size: 1.1em;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #4a154b;
+    font-size: 1.1em;
+  }
+
+  .sparkle {
+    display: inline-block;
+    animation: spin 4s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1><span class="sparkle">✨</span> Sparkle Shop <span class="sparkle">✨</span></h1>
+  <div class="tagline">Handmade Bracelets &amp; Bedazzling Kits by Me!</div>
+</header>
+
+<div class="about">
+  Hi! I'm a kid who LOVES making things sparkle. 💖
+  Every bracelet is made by me with bright beads, charms, and lots of love.
+  Pick one — or design your own!
+</div>
+
+<h2>🌈 Bracelets 🌈</h2>
+<div class="grid">
+
+  <div class="card pink">
+    <div class="picture bg1">📿💖📿</div>
+    <div class="name">Bubblegum Pop</div>
+    <div class="desc">Pink &amp; peach beads with a heart charm.</div>
+    <div class="price">$1.00</div>
+  </div>
+
+  <div class="card blue">
+    <div class="picture bg2">💙🐬💙</div>
+    <div class="name">Ocean Splash</div>
+    <div class="desc">Cool blue beads + tiny dolphin charm.</div>
+    <div class="price">$1.50</div>
+  </div>
+
+  <div class="card purple">
+    <div class="picture bg3">🦄✨🦄</div>
+    <div class="name">Unicorn Dream</div>
+    <div class="desc">Pastel rainbow beads with a unicorn charm.</div>
+    <div class="price">$2.00</div>
+  </div>
+
+  <div class="card orange">
+    <div class="picture bg4">🌅🧡🌅</div>
+    <div class="name">Sunset Vibes</div>
+    <div class="desc">Orange + cream beads, super smooth.</div>
+    <div class="price">$2.25</div>
+  </div>
+
+  <div class="card green">
+    <div class="picture bg5">🌿🍀🌿</div>
+    <div class="name">Lucky Leaf</div>
+    <div class="desc">Mint green beads with a clover charm.</div>
+    <div class="price">$2.50</div>
+  </div>
+
+  <div class="card pink">
+    <div class="picture bg7">💗🌸💗</div>
+    <div class="name">Cherry Blossom</div>
+    <div class="desc">Pink &amp; white beads with a flower charm.</div>
+    <div class="price">$3.00</div>
+  </div>
+
+  <div class="card purple">
+    <div class="picture bg6">🌟💜🌟</div>
+    <div class="name">Galaxy Glow</div>
+    <div class="desc">Purple &amp; orange beads, glow-in-the-dark!</div>
+    <div class="price">$3.50</div>
+  </div>
+
+  <div class="card gold">
+    <div class="picture bg9">⭐🌟⭐</div>
+    <div class="name">Golden Star</div>
+    <div class="desc">Gold beads + a shiny star charm.</div>
+    <div class="price">$3.75</div>
+  </div>
+
+  <div class="card blue">
+    <div class="picture bg10">🧊❄️🧊</div>
+    <div class="name">Ice Crystal</div>
+    <div class="desc">Sparkly clear &amp; blue beads — like ice!</div>
+    <div class="price">$4.00</div>
+  </div>
+
+  <div class="card pink">
+    <div class="picture bg11">🍓🍒🍓</div>
+    <div class="name">Berry Sweet</div>
+    <div class="desc">Berry color beads with fruit charms.</div>
+    <div class="price">$4.50</div>
+  </div>
+
+  <div class="card purple">
+    <div class="picture bg12">🌌🪐🌌</div>
+    <div class="name">Midnight Magic</div>
+    <div class="desc">Deep purple + teal beads with a moon charm.</div>
+    <div class="price">$4.75</div>
+  </div>
+
+  <div class="card gold">
+    <div class="picture bg8">👑💎👑</div>
+    <div class="name">Royal Treasure</div>
+    <div class="desc">Big shiny beads + a crown charm. Fancy!</div>
+    <div class="price">$5.00</div>
+  </div>
+
+</div>
+
+<h2>💎 Bedazzling Kits 💎</h2>
+<div class="grid">
+
+  <div class="card pink">
+    <div class="picture bg1">💎💖💎</div>
+    <div class="name">Mini Bling Kit</div>
+    <div class="desc">10 gems + 1 sticker base. Easy starter!</div>
+    <div class="price">$1.00</div>
+  </div>
+
+  <div class="card blue">
+    <div class="picture bg2">💎💙💎</div>
+    <div class="name">Cool Blue Kit</div>
+    <div class="desc">Blue gems, glue dots, and a phone tag.</div>
+    <div class="price">$2.00</div>
+  </div>
+
+  <div class="card purple">
+    <div class="picture bg6">💎💜💎</div>
+    <div class="name">Rainbow Sparkle Kit</div>
+    <div class="desc">Rainbow gems + 2 bases + glitter glue.</div>
+    <div class="price">$3.00</div>
+  </div>
+
+  <div class="card gold">
+    <div class="picture bg9">💎⭐💎</div>
+    <div class="name">Super Star Kit</div>
+    <div class="desc">Star gems, charms, and a notebook to bling!</div>
+    <div class="price">$4.00</div>
+  </div>
+
+  <div class="card orange">
+    <div class="picture bg4">💎🧡💎</div>
+    <div class="name">Mega Mix Kit</div>
+    <div class="desc">100+ gems, 4 bases, glitter glue, &amp; charms!</div>
+    <div class="price">$5.00</div>
+  </div>
+
+</div>
+
+<div class="customize">
+  <h2>✏️ Make It Yours! ✏️</h2>
+  <p>Want it extra special? Add custom stuff for a tiny price!</p>
+  <div class="options">
+    <div class="option">🔤 Add a name or word — <strong>+$1.00</strong></div>
+    <div class="option">💗 Add 1 charm — <strong>+25¢</strong></div>
+    <div class="option">✨ Extra gems &amp; sparkle — <strong>+25¢</strong></div>
+    <div class="option">🎨 Pick your own colors — <strong>+25¢</strong></div>
+    <div class="option">🎀 Gift wrap with a bow — <strong>+$1.00</strong></div>
+  </div>
+</div>
+
+<div class="how">
+  <h2 style="color:#1e90ff;">🛒 How to Order 🛒</h2>
+  <ol>
+    <li>Pick the bracelet or kit you LOVE.</li>
+    <li>Tell me any custom add-ons you want.</li>
+    <li>Pay with cash or a parent's help.</li>
+    <li>Get your sparkly creation in 1-3 days!</li>
+  </ol>
+</div>
+
+<footer>
+  Made with 💖 by your neighborhood bracelet maker.<br>
+  Thank you for shopping with me! ✨🌈✨
+</footer>
+
+</body>
+</html>
