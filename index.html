@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Sparkle Shop - Bracelets & Bedazzling Kits!</title>
+<title>Sparkle Shop - Loom Band Bracelets & Bedazzling Kits!</title>
 <style>
   body {
     font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
@@ -12,12 +13,10 @@
     padding: 0;
     color: #4a154b;
   }
-
   header {
     text-align: center;
     padding: 30px 20px 10px;
   }
-
   h1 {
     font-size: 3em;
     margin: 0;
@@ -25,13 +24,11 @@
     text-shadow: 3px 3px 0 #fff, 6px 6px 0 #ffd700;
     letter-spacing: 2px;
   }
-
   .tagline {
     font-size: 1.3em;
     color: #6a0dad;
     margin-top: 10px;
   }
-
   .about {
     background: rgba(255,255,255,0.85);
     border: 4px dashed #ff69b4;
@@ -42,7 +39,6 @@
     text-align: center;
     font-size: 1.1em;
   }
-
   h2 {
     text-align: center;
     font-size: 2.2em;
@@ -50,7 +46,6 @@
     text-shadow: 2px 2px 0 #fff;
     margin-top: 40px;
   }
-
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -59,7 +54,6 @@
     margin: 20px auto;
     padding: 0 20px;
   }
-
   .card {
     background: #fff;
     border-radius: 20px;
@@ -70,62 +64,76 @@
     border: 4px solid;
     transition: transform 0.2s;
   }
-
   .card:hover {
     transform: translateY(-5px) rotate(-1deg);
   }
-
   .card.pink   { border-color: #ff69b4; }
   .card.blue   { border-color: #1e90ff; }
   .card.purple { border-color: #9370db; }
   .card.gold   { border-color: #ffd700; }
   .card.green  { border-color: #32cd32; }
   .card.orange { border-color: #ff8c00; }
-
   .picture {
-    height: 140px;
+    height: 150px;
     border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3em;
     margin-bottom: 10px;
-    letter-spacing: 6px;
+    overflow: hidden;
+    position: relative;
   }
-
+  .picture svg {
+    width: 100%;
+    height: 100%;
+  }
+  .picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+  }
+  .hero-photo {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 14px auto 0;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  }
   .name {
     font-size: 1.3em;
     font-weight: bold;
     color: #4a154b;
     margin: 6px 0;
   }
-
   .desc {
     font-size: 0.95em;
     color: #555;
     min-height: 40px;
   }
-
   .price {
     font-size: 1.6em;
     font-weight: bold;
     color: #ff1493;
     margin-top: 8px;
   }
-
   /* Bracelet picture backgrounds */
-  .bg1 { background: linear-gradient(90deg,#ff9a9e,#fad0c4); }
-  .bg2 { background: linear-gradient(90deg,#a1c4fd,#c2e9fb); }
-  .bg3 { background: linear-gradient(90deg,#fbc2eb,#a6c1ee); }
-  .bg4 { background: linear-gradient(90deg,#ffecd2,#fcb69f); }
-  .bg5 { background: linear-gradient(90deg,#84fab0,#8fd3f4); }
-  .bg6 { background: linear-gradient(90deg,#fccb90,#d57eeb); }
-  .bg7 { background: linear-gradient(90deg,#ff6a88,#ff99ac); }
-  .bg8 { background: linear-gradient(90deg,#7028e4,#e5b2ca); }
-  .bg9 { background: linear-gradient(90deg,#f6d365,#fda085); }
-  .bg10{ background: linear-gradient(90deg,#5ee7df,#b490ca); }
-  .bg11{ background: linear-gradient(90deg,#fa709a,#fee140); }
-  .bg12{ background: linear-gradient(90deg,#30cfd0,#330867); color:#fff; }
+  .bg1 { background: linear-gradient(135deg,#ffe0e9,#ffd6c2); }
+  .bg2 { background: linear-gradient(135deg,#cfe6ff,#e3f4ff); }
+  .bg3 { background: linear-gradient(135deg,#3a3a3a,#5a5a5a); }
+  .bg4 { background: linear-gradient(135deg,#ffe7c2,#ffd1a8); }
+  .bg5 { background: linear-gradient(135deg,#dff7e0,#cfeedd); }
+  .bg6 { background: linear-gradient(135deg,#1a1a2e,#332e5a); }
+  .bg7 { background: linear-gradient(135deg,#ffd6e7,#ffe6f0); }
+  .bg8 { background: linear-gradient(135deg,#3b1f5a,#7028e4); }
+  .bg9 { background: linear-gradient(135deg,#fff3c2,#ffe79a); }
+  .bg10{ background: linear-gradient(135deg,#cfeefb,#a3d8f4); }
+  .bg11{ background: linear-gradient(135deg,#ffe1e9,#ffd0d8); }
+  .bg12{ background: linear-gradient(135deg,#1a0b3a,#3d1d6b); }
+  .bg-wood { background: linear-gradient(135deg,#a87b4f,#8a5d36); }
+  .bg-skin { background: linear-gradient(135deg,#f3d8be,#e8c39c); }
 
   .customize {
     background: rgba(255,255,255,0.92);
@@ -136,11 +144,9 @@
     padding: 25px;
     text-align: center;
   }
-
   .customize h2 {
     margin-top: 0;
   }
-
   .options {
     display: flex;
     flex-wrap: wrap;
@@ -148,7 +154,6 @@
     justify-content: center;
     margin-top: 15px;
   }
-
   .option {
     background: #fff0f5;
     border: 2px dashed #ff69b4;
@@ -156,11 +161,9 @@
     padding: 12px 18px;
     font-size: 1.05em;
   }
-
   .option strong {
     color: #ff1493;
   }
-
   .how {
     background: rgba(255,255,255,0.9);
     border-radius: 20px;
@@ -170,25 +173,21 @@
     text-align: center;
     border: 4px solid #1e90ff;
   }
-
   .how ol {
     text-align: left;
     display: inline-block;
     font-size: 1.1em;
   }
-
   footer {
     text-align: center;
     padding: 30px 20px;
     color: #4a154b;
     font-size: 1.1em;
   }
-
   .sparkle {
     display: inline-block;
     animation: spin 4s linear infinite;
   }
-
   @keyframes spin {
     from { transform: rotate(0deg); }
     to   { transform: rotate(360deg); }
@@ -197,102 +196,493 @@
 </head>
 <body>
 
+<!-- Reusable SVG loom-band bracelet symbols. Each is a fishtail/chevron weave drawn with V-shapes. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- One V-shaped loom link, used over and over in patterns -->
+    <symbol id="vlink" viewBox="0 0 20 24">
+      <path d="M2 4 L10 18 L18 4 L14 4 L10 12 L6 4 Z" />
+    </symbol>
+
+    <!-- A full bracelet "ring" template. Color is set via CSS classes on each <use>. -->
+    <!-- We layer many V-links along a curve to mimic a fishtail loom bracelet. -->
+  </defs>
+</svg>
+
 <header>
   <h1><span class="sparkle">✨</span> Sparkle Shop <span class="sparkle">✨</span></h1>
-  <div class="tagline">Handmade Bracelets &amp; Bedazzling Kits by Me!</div>
+  <div class="tagline">Handmade Loom Band Bracelets &amp; Bedazzling Kits by Me!</div>
 </header>
-
 <div class="about">
   Hi! I'm a kid who LOVES making things sparkle. 💖
-  Every bracelet is made by me with bright beads, charms, and lots of love.
+  Every bracelet is hand-loomed by me with bright rubber bands, charms, and lots of love.
   Pick one — or design your own!
+  <img src="images/img8.jpeg" alt="Lots of friends wearing my colorful loom band bracelets" class="hero-photo">
 </div>
 
-<h2>🌈 Bracelets 🌈</h2>
+<h2>🌈 Loom Band Bracelets 🌈</h2>
 <div class="grid">
 
+  <!-- 1. Rainbow Fishtail (real photo) -->
   <div class="card pink">
-    <div class="picture bg1">📿💖📿</div>
-    <div class="name">Bubblegum Pop</div>
-    <div class="desc">Pink &amp; peach beads with a heart charm.</div>
-    <div class="price">$1.00</div>
-  </div>
-
-  <div class="card blue">
-    <div class="picture bg2">💙🐬💙</div>
-    <div class="name">Ocean Splash</div>
-    <div class="desc">Cool blue beads + tiny dolphin charm.</div>
-    <div class="price">$1.50</div>
-  </div>
-
-  <div class="card purple">
-    <div class="picture bg3">🦄✨🦄</div>
-    <div class="name">Unicorn Dream</div>
-    <div class="desc">Pastel rainbow beads with a unicorn charm.</div>
+    <div class="picture">
+      <img src="images/img2.jpg" alt="Three stacked rainbow loom band bracelets">
+    </div>
+    <div class="name">Rainbow Fishtail</div>
+    <div class="desc">Classic rainbow loom — every color of the rainbow!</div>
     <div class="price">$2.00</div>
   </div>
 
-  <div class="card orange">
-    <div class="picture bg4">🌅🧡🌅</div>
-    <div class="name">Sunset Vibes</div>
-    <div class="desc">Orange + cream beads, super smooth.</div>
-    <div class="price">$2.25</div>
-  </div>
-
-  <div class="card green">
-    <div class="picture bg5">🌿🍀🌿</div>
-    <div class="name">Lucky Leaf</div>
-    <div class="desc">Mint green beads with a clover charm.</div>
-    <div class="price">$2.50</div>
-  </div>
-
-  <div class="card pink">
-    <div class="picture bg7">💗🌸💗</div>
-    <div class="name">Cherry Blossom</div>
-    <div class="desc">Pink &amp; white beads with a flower charm.</div>
+  <!-- 2. Neon Glow (real photo) -->
+  <div class="card purple">
+    <div class="picture">
+      <img src="images/img3.jpg" alt="Glow-in-the-dark neon rainbow loom band bracelet">
+    </div>
+    <div class="name">Neon Glow</div>
+    <div class="desc">Glow-in-the-dark neon bands woven with clear loops.</div>
     <div class="price">$3.00</div>
   </div>
 
+  <!-- 3. Cotton Candy Stack (real photo) -->
+  <div class="card pink">
+    <div class="picture">
+      <img src="images/img5.jpeg" alt="A stack of colorful loom band bracelets">
+    </div>
+    <div class="name">Cotton Candy Stack</div>
+    <div class="desc">A whole stack of bracelets — sweet &amp; super colorful.</div>
+    <div class="price">$2.50</div>
+  </div>
+
+  <!-- 4. Black & White Classic -->
   <div class="card purple">
-    <div class="picture bg6">🌟💜🌟</div>
+    <div class="picture bg-skin">
+      <svg viewBox="0 0 220 150">
+        <g transform="translate(30,55)">
+          <g><use href="#vlink" x="0"   y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="10"  y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="20"  y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="30"  y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="40"  y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="50"  y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="60"  y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="70"  y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="80"  y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="90"  y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="100" y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="110" y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="120" y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="130" y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="140" y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="150" y="0" fill="#111111"/></g>
+        </g>
+      </svg>
+    </div>
+    <div class="name">Tuxedo Twist</div>
+    <div class="desc">Crisp black &amp; white loom — goes with everything.</div>
+    <div class="price">$2.00</div>
+  </div>
+
+  <!-- 5. Pink & Black Chain -->
+  <div class="card pink">
+    <div class="picture bg-skin">
+      <svg viewBox="0 0 220 150">
+        <g transform="translate(30,55)">
+          <g><use href="#vlink" x="0"   y="0" fill="#ff3da6"/></g>
+          <g><use href="#vlink" x="10"  y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="20"  y="0" fill="#ff3da6"/></g>
+          <g><use href="#vlink" x="30"  y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="40"  y="0" fill="#ff3da6"/></g>
+          <g><use href="#vlink" x="50"  y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="60"  y="0" fill="#ff3da6"/></g>
+          <g><use href="#vlink" x="70"  y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="80"  y="0" fill="#ff3da6"/></g>
+          <g><use href="#vlink" x="90"  y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="100" y="0" fill="#ff3da6"/></g>
+          <g><use href="#vlink" x="110" y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="120" y="0" fill="#ff3da6"/></g>
+          <g><use href="#vlink" x="130" y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="140" y="0" fill="#ff3da6"/></g>
+          <g><use href="#vlink" x="150" y="0" fill="#111111"/></g>
+        </g>
+      </svg>
+    </div>
+    <div class="name">Pink Punk</div>
+    <div class="desc">Hot pink &amp; jet black — bold and a little edgy.</div>
+    <div class="price">$2.25</div>
+  </div>
+
+  <!-- 6. Black & Yellow Chain -->
+  <div class="card gold">
+    <div class="picture bg-skin">
+      <svg viewBox="0 0 220 150">
+        <g transform="translate(30,55)">
+          <g><use href="#vlink" x="0"   y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="10"  y="0" fill="#ffd600"/></g>
+          <g><use href="#vlink" x="20"  y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="30"  y="0" fill="#ffd600"/></g>
+          <g><use href="#vlink" x="40"  y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="50"  y="0" fill="#ffd600"/></g>
+          <g><use href="#vlink" x="60"  y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="70"  y="0" fill="#ffd600"/></g>
+          <g><use href="#vlink" x="80"  y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="90"  y="0" fill="#ffd600"/></g>
+          <g><use href="#vlink" x="100" y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="110" y="0" fill="#ffd600"/></g>
+          <g><use href="#vlink" x="120" y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="130" y="0" fill="#ffd600"/></g>
+          <g><use href="#vlink" x="140" y="0" fill="#111111"/></g>
+          <g><use href="#vlink" x="150" y="0" fill="#ffd600"/></g>
+        </g>
+      </svg>
+    </div>
+    <div class="name">Buzzy Bee</div>
+    <div class="desc">Black &amp; yellow stripes — buzz buzz!</div>
+    <div class="price">$2.25</div>
+  </div>
+
+  <!-- 7. Purple & Teal -->
+  <div class="card purple">
+    <div class="picture bg8">
+      <svg viewBox="0 0 220 150">
+        <g transform="translate(30,55)">
+          <g><use href="#vlink" x="0"   y="0" fill="#9b30ff"/></g>
+          <g><use href="#vlink" x="10"  y="0" fill="#00d8d8"/></g>
+          <g><use href="#vlink" x="20"  y="0" fill="#9b30ff"/></g>
+          <g><use href="#vlink" x="30"  y="0" fill="#00d8d8"/></g>
+          <g><use href="#vlink" x="40"  y="0" fill="#9b30ff"/></g>
+          <g><use href="#vlink" x="50"  y="0" fill="#00d8d8"/></g>
+          <g><use href="#vlink" x="60"  y="0" fill="#9b30ff"/></g>
+          <g><use href="#vlink" x="70"  y="0" fill="#00d8d8"/></g>
+          <g><use href="#vlink" x="80"  y="0" fill="#9b30ff"/></g>
+          <g><use href="#vlink" x="90"  y="0" fill="#00d8d8"/></g>
+          <g><use href="#vlink" x="100" y="0" fill="#9b30ff"/></g>
+          <g><use href="#vlink" x="110" y="0" fill="#00d8d8"/></g>
+          <g><use href="#vlink" x="120" y="0" fill="#9b30ff"/></g>
+          <g><use href="#vlink" x="130" y="0" fill="#00d8d8"/></g>
+          <g><use href="#vlink" x="140" y="0" fill="#9b30ff"/></g>
+          <g><use href="#vlink" x="150" y="0" fill="#00d8d8"/></g>
+        </g>
+      </svg>
+    </div>
+    <div class="name">Mermaid Magic</div>
+    <div class="desc">Purple &amp; teal weave — under-the-sea sparkle.</div>
+    <div class="price">$2.50</div>
+  </div>
+
+  <!-- 8. Galaxy (deep purple/blue) -->
+  <div class="card purple">
+    <div class="picture bg12">
+      <svg viewBox="0 0 220 150">
+        <g transform="translate(30,55)">
+          <g><use href="#vlink" x="0"   y="0" fill="#5a4cff"/></g>
+          <g><use href="#vlink" x="10"  y="0" fill="#9b30ff"/></g>
+          <g><use href="#vlink" x="20"  y="0" fill="#1a0b3a"/></g>
+          <g><use href="#vlink" x="30"  y="0" fill="#5a4cff"/></g>
+          <g><use href="#vlink" x="40"  y="0" fill="#9b30ff"/></g>
+          <g><use href="#vlink" x="50"  y="0" fill="#1a0b3a"/></g>
+          <g><use href="#vlink" x="60"  y="0" fill="#5a4cff"/></g>
+          <g><use href="#vlink" x="70"  y="0" fill="#9b30ff"/></g>
+          <g><use href="#vlink" x="80"  y="0" fill="#1a0b3a"/></g>
+          <g><use href="#vlink" x="90"  y="0" fill="#5a4cff"/></g>
+          <g><use href="#vlink" x="100" y="0" fill="#9b30ff"/></g>
+          <g><use href="#vlink" x="110" y="0" fill="#1a0b3a"/></g>
+          <g><use href="#vlink" x="120" y="0" fill="#5a4cff"/></g>
+          <g><use href="#vlink" x="130" y="0" fill="#9b30ff"/></g>
+          <g><use href="#vlink" x="140" y="0" fill="#1a0b3a"/></g>
+          <g><use href="#vlink" x="150" y="0" fill="#5a4cff"/></g>
+        </g>
+        <!-- tiny stars -->
+        <circle cx="40" cy="30" r="1.2" fill="#fff"/>
+        <circle cx="180" cy="40" r="1.2" fill="#fff"/>
+        <circle cx="120" cy="20" r="1" fill="#fff"/>
+        <circle cx="60" cy="120" r="1" fill="#fff"/>
+        <circle cx="170" cy="120" r="1.2" fill="#fff"/>
+      </svg>
+    </div>
     <div class="name">Galaxy Glow</div>
-    <div class="desc">Purple &amp; orange beads, glow-in-the-dark!</div>
+    <div class="desc">Deep purple &amp; midnight blue — outer space style!</div>
     <div class="price">$3.50</div>
   </div>
 
-  <div class="card gold">
-    <div class="picture bg9">⭐🌟⭐</div>
-    <div class="name">Golden Star</div>
-    <div class="desc">Gold beads + a shiny star charm.</div>
-    <div class="price">$3.75</div>
+  <!-- 9. Ocean -->
+  <div class="card blue">
+    <div class="picture bg2">
+      <svg viewBox="0 0 220 150">
+        <g transform="translate(30,55)">
+          <g><use href="#vlink" x="0"   y="0" fill="#00aaff"/></g>
+          <g><use href="#vlink" x="10"  y="0" fill="#7fdbff"/></g>
+          <g><use href="#vlink" x="20"  y="0" fill="#0066cc"/></g>
+          <g><use href="#vlink" x="30"  y="0" fill="#00aaff"/></g>
+          <g><use href="#vlink" x="40"  y="0" fill="#7fdbff"/></g>
+          <g><use href="#vlink" x="50"  y="0" fill="#0066cc"/></g>
+          <g><use href="#vlink" x="60"  y="0" fill="#00aaff"/></g>
+          <g><use href="#vlink" x="70"  y="0" fill="#7fdbff"/></g>
+          <g><use href="#vlink" x="80"  y="0" fill="#0066cc"/></g>
+          <g><use href="#vlink" x="90"  y="0" fill="#00aaff"/></g>
+          <g><use href="#vlink" x="100" y="0" fill="#7fdbff"/></g>
+          <g><use href="#vlink" x="110" y="0" fill="#0066cc"/></g>
+          <g><use href="#vlink" x="120" y="0" fill="#00aaff"/></g>
+          <g><use href="#vlink" x="130" y="0" fill="#7fdbff"/></g>
+          <g><use href="#vlink" x="140" y="0" fill="#0066cc"/></g>
+          <g><use href="#vlink" x="150" y="0" fill="#00aaff"/></g>
+        </g>
+      </svg>
+    </div>
+    <div class="name">Ocean Splash</div>
+    <div class="desc">Three shades of blue — like waves on your wrist.</div>
+    <div class="price">$2.00</div>
   </div>
 
+  <!-- 10. Sunset -->
+  <div class="card orange">
+    <div class="picture bg4">
+      <svg viewBox="0 0 220 150">
+        <g transform="translate(30,55)">
+          <g><use href="#vlink" x="0"   y="0" fill="#ff3d00"/></g>
+          <g><use href="#vlink" x="10"  y="0" fill="#ff7b00"/></g>
+          <g><use href="#vlink" x="20"  y="0" fill="#ffb000"/></g>
+          <g><use href="#vlink" x="30"  y="0" fill="#ffd600"/></g>
+          <g><use href="#vlink" x="40"  y="0" fill="#ffb000"/></g>
+          <g><use href="#vlink" x="50"  y="0" fill="#ff7b00"/></g>
+          <g><use href="#vlink" x="60"  y="0" fill="#ff3d00"/></g>
+          <g><use href="#vlink" x="70"  y="0" fill="#ff7b00"/></g>
+          <g><use href="#vlink" x="80"  y="0" fill="#ffb000"/></g>
+          <g><use href="#vlink" x="90"  y="0" fill="#ffd600"/></g>
+          <g><use href="#vlink" x="100" y="0" fill="#ffb000"/></g>
+          <g><use href="#vlink" x="110" y="0" fill="#ff7b00"/></g>
+          <g><use href="#vlink" x="120" y="0" fill="#ff3d00"/></g>
+          <g><use href="#vlink" x="130" y="0" fill="#ff7b00"/></g>
+          <g><use href="#vlink" x="140" y="0" fill="#ffb000"/></g>
+          <g><use href="#vlink" x="150" y="0" fill="#ffd600"/></g>
+        </g>
+      </svg>
+    </div>
+    <div class="name">Sunset Vibes</div>
+    <div class="desc">Warm sunset colors woven into every band.</div>
+    <div class="price">$2.25</div>
+  </div>
+
+  <!-- 11. Lucky Leaf -->
+  <div class="card green">
+    <div class="picture bg5">
+      <svg viewBox="0 0 220 150">
+        <g transform="translate(30,55)">
+          <g><use href="#vlink" x="0"   y="0" fill="#3ab54a"/></g>
+          <g><use href="#vlink" x="10"  y="0" fill="#a8e6a3"/></g>
+          <g><use href="#vlink" x="20"  y="0" fill="#3ab54a"/></g>
+          <g><use href="#vlink" x="30"  y="0" fill="#a8e6a3"/></g>
+          <g><use href="#vlink" x="40"  y="0" fill="#3ab54a"/></g>
+          <g><use href="#vlink" x="50"  y="0" fill="#a8e6a3"/></g>
+          <g><use href="#vlink" x="60"  y="0" fill="#3ab54a"/></g>
+          <g><use href="#vlink" x="70"  y="0" fill="#a8e6a3"/></g>
+          <g><use href="#vlink" x="80"  y="0" fill="#3ab54a"/></g>
+          <g><use href="#vlink" x="90"  y="0" fill="#a8e6a3"/></g>
+          <g><use href="#vlink" x="100" y="0" fill="#3ab54a"/></g>
+          <g><use href="#vlink" x="110" y="0" fill="#a8e6a3"/></g>
+          <g><use href="#vlink" x="120" y="0" fill="#3ab54a"/></g>
+          <g><use href="#vlink" x="130" y="0" fill="#a8e6a3"/></g>
+          <g><use href="#vlink" x="140" y="0" fill="#3ab54a"/></g>
+          <g><use href="#vlink" x="150" y="0" fill="#a8e6a3"/></g>
+        </g>
+      </svg>
+    </div>
+    <div class="name">Lucky Leaf</div>
+    <div class="desc">Mint &amp; forest greens — feel lucky every day!</div>
+    <div class="price">$2.00</div>
+  </div>
+
+  <!-- 12. Gold Royal -->
+  <div class="card gold">
+    <div class="picture bg9">
+      <svg viewBox="0 0 220 150">
+        <g transform="translate(30,55)">
+          <g><use href="#vlink" x="0"   y="0" fill="#ffd700"/></g>
+          <g><use href="#vlink" x="10"  y="0" fill="#fff3a0"/></g>
+          <g><use href="#vlink" x="20"  y="0" fill="#ffae00"/></g>
+          <g><use href="#vlink" x="30"  y="0" fill="#ffd700"/></g>
+          <g><use href="#vlink" x="40"  y="0" fill="#fff3a0"/></g>
+          <g><use href="#vlink" x="50"  y="0" fill="#ffae00"/></g>
+          <g><use href="#vlink" x="60"  y="0" fill="#ffd700"/></g>
+          <g><use href="#vlink" x="70"  y="0" fill="#fff3a0"/></g>
+          <g><use href="#vlink" x="80"  y="0" fill="#ffae00"/></g>
+          <g><use href="#vlink" x="90"  y="0" fill="#ffd700"/></g>
+          <g><use href="#vlink" x="100" y="0" fill="#fff3a0"/></g>
+          <g><use href="#vlink" x="110" y="0" fill="#ffae00"/></g>
+          <g><use href="#vlink" x="120" y="0" fill="#ffd700"/></g>
+          <g><use href="#vlink" x="130" y="0" fill="#fff3a0"/></g>
+          <g><use href="#vlink" x="140" y="0" fill="#ffae00"/></g>
+          <g><use href="#vlink" x="150" y="0" fill="#ffd700"/></g>
+        </g>
+      </svg>
+    </div>
+    <div class="name">Royal Treasure</div>
+    <div class="desc">All shades of gold — fit for a queen or king!</div>
+    <div class="price">$3.00</div>
+  </div>
+
+  <!-- 13. Cherry Blossom (NEW) -->
+  <div class="card pink">
+    <div class="picture bg11">
+      <svg viewBox="0 0 220 150">
+        <g transform="translate(30,55)">
+          <g><use href="#vlink" x="0"   y="0" fill="#ffb6c1"/></g>
+          <g><use href="#vlink" x="10"  y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="20"  y="0" fill="#ff69b4"/></g>
+          <g><use href="#vlink" x="30"  y="0" fill="#ffb6c1"/></g>
+          <g><use href="#vlink" x="40"  y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="50"  y="0" fill="#ff69b4"/></g>
+          <g><use href="#vlink" x="60"  y="0" fill="#ffb6c1"/></g>
+          <g><use href="#vlink" x="70"  y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="80"  y="0" fill="#ff69b4"/></g>
+          <g><use href="#vlink" x="90"  y="0" fill="#ffb6c1"/></g>
+          <g><use href="#vlink" x="100" y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="110" y="0" fill="#ff69b4"/></g>
+          <g><use href="#vlink" x="120" y="0" fill="#ffb6c1"/></g>
+          <g><use href="#vlink" x="130" y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="140" y="0" fill="#ff69b4"/></g>
+          <g><use href="#vlink" x="150" y="0" fill="#ffb6c1"/></g>
+        </g>
+      </svg>
+    </div>
+    <div class="name">Cherry Blossom</div>
+    <div class="desc">Soft pinks &amp; white — like spring flowers!</div>
+    <div class="price">$2.50</div>
+  </div>
+
+  <!-- 14. Ice Crystal (NEW) -->
   <div class="card blue">
-    <div class="picture bg10">🧊❄️🧊</div>
+    <div class="picture bg10">
+      <svg viewBox="0 0 220 150">
+        <g transform="translate(30,55)">
+          <g><use href="#vlink" x="0"   y="0" fill="#ffffff" opacity="0.85"/></g>
+          <g><use href="#vlink" x="10"  y="0" fill="#a3d8f4"/></g>
+          <g><use href="#vlink" x="20"  y="0" fill="#ffffff" opacity="0.85"/></g>
+          <g><use href="#vlink" x="30"  y="0" fill="#7fdbff"/></g>
+          <g><use href="#vlink" x="40"  y="0" fill="#ffffff" opacity="0.85"/></g>
+          <g><use href="#vlink" x="50"  y="0" fill="#a3d8f4"/></g>
+          <g><use href="#vlink" x="60"  y="0" fill="#ffffff" opacity="0.85"/></g>
+          <g><use href="#vlink" x="70"  y="0" fill="#7fdbff"/></g>
+          <g><use href="#vlink" x="80"  y="0" fill="#ffffff" opacity="0.85"/></g>
+          <g><use href="#vlink" x="90"  y="0" fill="#a3d8f4"/></g>
+          <g><use href="#vlink" x="100" y="0" fill="#ffffff" opacity="0.85"/></g>
+          <g><use href="#vlink" x="110" y="0" fill="#7fdbff"/></g>
+          <g><use href="#vlink" x="120" y="0" fill="#ffffff" opacity="0.85"/></g>
+          <g><use href="#vlink" x="130" y="0" fill="#a3d8f4"/></g>
+          <g><use href="#vlink" x="140" y="0" fill="#ffffff" opacity="0.85"/></g>
+          <g><use href="#vlink" x="150" y="0" fill="#7fdbff"/></g>
+        </g>
+      </svg>
+    </div>
     <div class="name">Ice Crystal</div>
-    <div class="desc">Sparkly clear &amp; blue beads — like ice!</div>
+    <div class="desc">Frosty whites &amp; icy blues — chill and shiny!</div>
+    <div class="price">$3.00</div>
+  </div>
+
+  <!-- 15. Berry Sweet (real photo) -->
+  <div class="card pink">
+    <div class="picture">
+      <img src="images/img4.jpg" alt="Pink, purple and yellow fishtail loom band bracelet">
+    </div>
+    <div class="name">Berry Sweet</div>
+    <div class="desc">Pink, purple &amp; sunshine yellow — fruity fun!</div>
+    <div class="price">$2.75</div>
+  </div>
+
+  <!-- 15b. Berry & Lime Pair (real photo) NEW -->
+  <div class="card green">
+    <div class="picture">
+      <img src="images/img7.jpeg" alt="Pink and neon green fishtail loom band bracelets, a matching pair">
+    </div>
+    <div class="name">Berry &amp; Lime Pair</div>
+    <div class="desc">Best-friend bracelet pair — pink &amp; neon green!</div>
     <div class="price">$4.00</div>
   </div>
 
-  <div class="card pink">
-    <div class="picture bg11">🍓🍒🍓</div>
-    <div class="name">Berry Sweet</div>
-    <div class="desc">Berry color beads with fruit charms.</div>
-    <div class="price">$4.50</div>
+  <!-- 16. Tropical Sunrise (NEW) -->
+  <div class="card orange">
+    <div class="picture bg4">
+      <svg viewBox="0 0 220 150">
+        <g transform="translate(30,55)">
+          <g><use href="#vlink" x="0"   y="0" fill="#ff007f"/></g>
+          <g><use href="#vlink" x="10"  y="0" fill="#ff7b00"/></g>
+          <g><use href="#vlink" x="20"  y="0" fill="#ffd000"/></g>
+          <g><use href="#vlink" x="30"  y="0" fill="#39ff14"/></g>
+          <g><use href="#vlink" x="40"  y="0" fill="#ff007f"/></g>
+          <g><use href="#vlink" x="50"  y="0" fill="#ff7b00"/></g>
+          <g><use href="#vlink" x="60"  y="0" fill="#ffd000"/></g>
+          <g><use href="#vlink" x="70"  y="0" fill="#39ff14"/></g>
+          <g><use href="#vlink" x="80"  y="0" fill="#ff007f"/></g>
+          <g><use href="#vlink" x="90"  y="0" fill="#ff7b00"/></g>
+          <g><use href="#vlink" x="100" y="0" fill="#ffd000"/></g>
+          <g><use href="#vlink" x="110" y="0" fill="#39ff14"/></g>
+          <g><use href="#vlink" x="120" y="0" fill="#ff007f"/></g>
+          <g><use href="#vlink" x="130" y="0" fill="#ff7b00"/></g>
+          <g><use href="#vlink" x="140" y="0" fill="#ffd000"/></g>
+          <g><use href="#vlink" x="150" y="0" fill="#39ff14"/></g>
+        </g>
+      </svg>
+    </div>
+    <div class="name">Tropical Sunrise</div>
+    <div class="desc">Hot pink, orange, yellow &amp; lime — pure summer!</div>
+    <div class="price">$3.25</div>
   </div>
 
+  <!-- 17. Patriotic Pop (NEW) -->
+  <div class="card blue">
+    <div class="picture bg2">
+      <svg viewBox="0 0 220 150">
+        <g transform="translate(30,55)">
+          <g><use href="#vlink" x="0"   y="0" fill="#e10600"/></g>
+          <g><use href="#vlink" x="10"  y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="20"  y="0" fill="#0033a0"/></g>
+          <g><use href="#vlink" x="30"  y="0" fill="#e10600"/></g>
+          <g><use href="#vlink" x="40"  y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="50"  y="0" fill="#0033a0"/></g>
+          <g><use href="#vlink" x="60"  y="0" fill="#e10600"/></g>
+          <g><use href="#vlink" x="70"  y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="80"  y="0" fill="#0033a0"/></g>
+          <g><use href="#vlink" x="90"  y="0" fill="#e10600"/></g>
+          <g><use href="#vlink" x="100" y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="110" y="0" fill="#0033a0"/></g>
+          <g><use href="#vlink" x="120" y="0" fill="#e10600"/></g>
+          <g><use href="#vlink" x="130" y="0" fill="#ffffff"/></g>
+          <g><use href="#vlink" x="140" y="0" fill="#0033a0"/></g>
+          <g><use href="#vlink" x="150" y="0" fill="#e10600"/></g>
+        </g>
+      </svg>
+    </div>
+    <div class="name">Patriotic Pop</div>
+    <div class="desc">Red, white &amp; blue — perfect for parades!</div>
+    <div class="price">$2.50</div>
+  </div>
+
+  <!-- 18. Pastel Dream (NEW) -->
   <div class="card purple">
-    <div class="picture bg12">🌌🪐🌌</div>
-    <div class="name">Midnight Magic</div>
-    <div class="desc">Deep purple + teal beads with a moon charm.</div>
-    <div class="price">$4.75</div>
-  </div>
-
-  <div class="card gold">
-    <div class="picture bg8">👑💎👑</div>
-    <div class="name">Royal Treasure</div>
-    <div class="desc">Big shiny beads + a crown charm. Fancy!</div>
-    <div class="price">$5.00</div>
+    <div class="picture bg7">
+      <svg viewBox="0 0 220 150">
+        <g transform="translate(30,55)">
+          <g><use href="#vlink" x="0"   y="0" fill="#ffd1dc"/></g>
+          <g><use href="#vlink" x="10"  y="0" fill="#cdb4db"/></g>
+          <g><use href="#vlink" x="20"  y="0" fill="#bde0fe"/></g>
+          <g><use href="#vlink" x="30"  y="0" fill="#caffbf"/></g>
+          <g><use href="#vlink" x="40"  y="0" fill="#fdffb6"/></g>
+          <g><use href="#vlink" x="50"  y="0" fill="#ffd1dc"/></g>
+          <g><use href="#vlink" x="60"  y="0" fill="#cdb4db"/></g>
+          <g><use href="#vlink" x="70"  y="0" fill="#bde0fe"/></g>
+          <g><use href="#vlink" x="80"  y="0" fill="#caffbf"/></g>
+          <g><use href="#vlink" x="90"  y="0" fill="#fdffb6"/></g>
+          <g><use href="#vlink" x="100" y="0" fill="#ffd1dc"/></g>
+          <g><use href="#vlink" x="110" y="0" fill="#cdb4db"/></g>
+          <g><use href="#vlink" x="120" y="0" fill="#bde0fe"/></g>
+          <g><use href="#vlink" x="130" y="0" fill="#caffbf"/></g>
+          <g><use href="#vlink" x="140" y="0" fill="#fdffb6"/></g>
+          <g><use href="#vlink" x="150" y="0" fill="#ffd1dc"/></g>
+        </g>
+      </svg>
+    </div>
+    <div class="name">Pastel Dream</div>
+    <div class="desc">All the soft pastel colors woven together.</div>
+    <div class="price">$2.75</div>
   </div>
 
 </div>
@@ -301,38 +691,159 @@
 <div class="grid">
 
   <div class="card pink">
-    <div class="picture bg1">💎💖💎</div>
+    <div class="picture bg1">
+      <svg viewBox="0 0 220 150">
+        <!-- gem cluster -->
+        <g>
+          <polygon points="60,40 75,55 60,90 45,55" fill="#ff69b4" stroke="#fff" stroke-width="2"/>
+          <polygon points="110,30 130,55 110,100 90,55" fill="#ffd1dc" stroke="#fff" stroke-width="2"/>
+          <polygon points="160,50 175,65 160,95 145,65" fill="#ff1493" stroke="#fff" stroke-width="2"/>
+          <circle cx="40" cy="110" r="6" fill="#fff" stroke="#ff69b4" stroke-width="2"/>
+          <circle cx="80" cy="115" r="5" fill="#fff" stroke="#ff69b4" stroke-width="2"/>
+          <circle cx="180" cy="110" r="6" fill="#fff" stroke="#ff69b4" stroke-width="2"/>
+        </g>
+      </svg>
+    </div>
     <div class="name">Mini Bling Kit</div>
-    <div class="desc">10 gems + 1 sticker base. Easy starter!</div>
+    <div class="desc">10 pink gems + 1 sticker base. Easy starter!</div>
     <div class="price">$1.00</div>
   </div>
 
   <div class="card blue">
-    <div class="picture bg2">💎💙💎</div>
+    <div class="picture bg2">
+      <svg viewBox="0 0 220 150">
+        <g>
+          <polygon points="60,40 75,55 60,90 45,55" fill="#1e90ff" stroke="#fff" stroke-width="2"/>
+          <polygon points="110,30 130,55 110,100 90,55" fill="#7fdbff" stroke="#fff" stroke-width="2"/>
+          <polygon points="160,50 175,65 160,95 145,65" fill="#0066cc" stroke="#fff" stroke-width="2"/>
+          <circle cx="40" cy="110" r="6" fill="#fff" stroke="#1e90ff" stroke-width="2"/>
+          <circle cx="80" cy="115" r="5" fill="#fff" stroke="#1e90ff" stroke-width="2"/>
+          <circle cx="180" cy="110" r="6" fill="#fff" stroke="#1e90ff" stroke-width="2"/>
+        </g>
+      </svg>
+    </div>
     <div class="name">Cool Blue Kit</div>
     <div class="desc">Blue gems, glue dots, and a phone tag.</div>
     <div class="price">$2.00</div>
   </div>
 
   <div class="card purple">
-    <div class="picture bg6">💎💜💎</div>
+    <div class="picture bg6">
+      <svg viewBox="0 0 220 150">
+        <g>
+          <polygon points="35,40 50,55 35,90 20,55" fill="#ff007f" stroke="#fff" stroke-width="2"/>
+          <polygon points="75,30 90,45 75,80 60,45" fill="#ff7b00" stroke="#fff" stroke-width="2"/>
+          <polygon points="115,40 130,55 115,90 100,55" fill="#ffd000" stroke="#fff" stroke-width="2"/>
+          <polygon points="155,30 170,45 155,80 140,45" fill="#39ff14" stroke="#fff" stroke-width="2"/>
+          <polygon points="195,40 210,55 195,90 180,55" fill="#9b30ff" stroke="#fff" stroke-width="2"/>
+          <circle cx="55"  cy="115" r="5" fill="#7fdbff" stroke="#fff" stroke-width="2"/>
+          <circle cx="105" cy="120" r="5" fill="#ff69b4" stroke="#fff" stroke-width="2"/>
+          <circle cx="155" cy="115" r="5" fill="#ffd000" stroke="#fff" stroke-width="2"/>
+        </g>
+      </svg>
+    </div>
     <div class="name">Rainbow Sparkle Kit</div>
     <div class="desc">Rainbow gems + 2 bases + glitter glue.</div>
     <div class="price">$3.00</div>
   </div>
 
   <div class="card gold">
-    <div class="picture bg9">💎⭐💎</div>
+    <div class="picture bg9">
+      <svg viewBox="0 0 220 150">
+        <g>
+          <polygon points="55,75 60,55 80,55 65,70 70,90 55,80 40,90 45,70 30,55 50,55" fill="#ffd700" stroke="#fff" stroke-width="2"/>
+          <polygon points="115,75 120,55 140,55 125,70 130,90 115,80 100,90 105,70 90,55 110,55" fill="#fff3a0" stroke="#fff" stroke-width="2"/>
+          <polygon points="175,75 180,55 200,55 185,70 190,90 175,80 160,90 165,70 150,55 170,55" fill="#ffae00" stroke="#fff" stroke-width="2"/>
+          <circle cx="60" cy="115" r="5" fill="#fff" stroke="#ffd700" stroke-width="2"/>
+          <circle cx="120" cy="120" r="5" fill="#fff" stroke="#ffd700" stroke-width="2"/>
+          <circle cx="180" cy="115" r="5" fill="#fff" stroke="#ffd700" stroke-width="2"/>
+        </g>
+      </svg>
+    </div>
     <div class="name">Super Star Kit</div>
     <div class="desc">Star gems, charms, and a notebook to bling!</div>
     <div class="price">$4.00</div>
   </div>
 
   <div class="card orange">
-    <div class="picture bg4">💎🧡💎</div>
+    <div class="picture">
+      <img src="images/img1.jpg" alt="A wrist full of loom band bracelets next to a rainbow band organizer box">
+    </div>
     <div class="name">Mega Mix Kit</div>
-    <div class="desc">100+ gems, 4 bases, glitter glue, &amp; charms!</div>
+    <div class="desc">Tons of bands, organizer box, clips &amp; charms!</div>
     <div class="price">$5.00</div>
+  </div>
+
+  <!-- NEW KIT 1: Loom Band Starter -->
+  <div class="card green">
+    <div class="picture bg5">
+      <svg viewBox="0 0 220 150">
+        <!-- a pile of rubber band loops -->
+        <g fill="none" stroke-width="3">
+          <ellipse cx="50"  cy="50" rx="18" ry="8" stroke="#ff69b4"/>
+          <ellipse cx="80"  cy="55" rx="18" ry="8" stroke="#ff7b00"/>
+          <ellipse cx="110" cy="50" rx="18" ry="8" stroke="#ffd000"/>
+          <ellipse cx="140" cy="55" rx="18" ry="8" stroke="#39ff14"/>
+          <ellipse cx="170" cy="50" rx="18" ry="8" stroke="#00d8d8"/>
+          <ellipse cx="65"  cy="85" rx="18" ry="8" stroke="#9b30ff"/>
+          <ellipse cx="100" cy="90" rx="18" ry="8" stroke="#ff1493"/>
+          <ellipse cx="135" cy="85" rx="18" ry="8" stroke="#5a4cff"/>
+          <ellipse cx="170" cy="90" rx="18" ry="8" stroke="#ff007f"/>
+        </g>
+        <!-- mini loom -->
+        <rect x="60" y="115" width="100" height="14" rx="3" fill="#ffd700" stroke="#b8860b" stroke-width="1.5"/>
+        <circle cx="75"  cy="122" r="2.5" fill="#fff"/>
+        <circle cx="95"  cy="122" r="2.5" fill="#fff"/>
+        <circle cx="115" cy="122" r="2.5" fill="#fff"/>
+        <circle cx="135" cy="122" r="2.5" fill="#fff"/>
+        <circle cx="145" cy="122" r="2.5" fill="#fff"/>
+      </svg>
+    </div>
+    <div class="name">Loom Band Starter Kit</div>
+    <div class="desc">Mini loom + 200 bands + clips. Make your own!</div>
+    <div class="price">$3.50</div>
+  </div>
+
+  <!-- NEW KIT 2: Charm Pack (real photo) -->
+  <div class="card pink">
+    <div class="picture">
+      <img src="images/img6.jpeg" alt="Stack of rainbow loom band bracelets with a yellow smiley face charm">
+    </div>
+    <div class="name">Charm Pack</div>
+    <div class="desc">10 cute charms — smileys, hearts, stars &amp; more!</div>
+    <div class="price">$2.50</div>
+  </div>
+
+  <!-- NEW KIT 3: Glow in the Dark -->
+  <div class="card green">
+    <div class="picture bg6">
+      <svg viewBox="0 0 220 150">
+        <defs>
+          <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#aeffae" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#39ff14" stop-opacity="0.2"/>
+          </radialGradient>
+          <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fffbb0" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#ffd000" stop-opacity="0.2"/>
+          </radialGradient>
+          <radialGradient id="glow3" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#b0fff7" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#00d8d8" stop-opacity="0.2"/>
+          </radialGradient>
+        </defs>
+        <circle cx="55"  cy="60" r="22" fill="url(#glow1)"/>
+        <circle cx="115" cy="55" r="26" fill="url(#glow2)"/>
+        <circle cx="170" cy="65" r="22" fill="url(#glow3)"/>
+        <polygon points="55,55 58,63 66,63 60,68 62,76 55,71 48,76 50,68 44,63 52,63" fill="#39ff14"/>
+        <polygon points="115,50 118,58 126,58 120,63 122,71 115,66 108,71 110,63 104,58 112,58" fill="#ffd000"/>
+        <polygon points="170,60 173,68 181,68 175,73 177,81 170,76 163,81 165,73 159,68 167,68" fill="#00d8d8"/>
+        <text x="110" y="125" fill="#fff" font-size="14" text-anchor="middle" font-family="Comic Sans MS">★ glows at night ★</text>
+      </svg>
+    </div>
+    <div class="name">Glow in the Dark Kit</div>
+    <div class="desc">Glowing gems + glow bands. Charges in sunlight!</div>
+    <div class="price">$4.50</div>
   </div>
 
 </div>
@@ -345,6 +856,7 @@
     <div class="option">💗 Add 1 charm — <strong>+25¢</strong></div>
     <div class="option">✨ Extra gems &amp; sparkle — <strong>+25¢</strong></div>
     <div class="option">🎨 Pick your own colors — <strong>+25¢</strong></div>
+    <div class="option">🌈 Glow-in-the-dark bands — <strong>+50¢</strong></div>
     <div class="option">🎀 Gift wrap with a bow — <strong>+$1.00</strong></div>
   </div>
 </div>
@@ -363,6 +875,5 @@
   Made with 💖 by your neighborhood bracelet maker.<br>
   Thank you for shopping with me! ✨🌈✨
 </footer>
-
 </body>
 </html>
